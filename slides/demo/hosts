@@ -1,0 +1,24 @@
+[localhost]
+localhost			ansible_connection=local ansible_python_interpreter=/home/devops/local/venvs/ansible-nova/bin/python
+
+[db]
+dbsrv01.example.com
+dbsrv02.example.com
+
+[app]
+appsrv01			ansible_ssh_host=appsrv01.dmz.example.com
+appsrv02			ansible_ssh_host=10.0.1.12
+
+[web]
+web01.dmz.example.com		ansible_ssh_user=root
+web[02:03].dmz.example.com
+
+[dmz:children]
+app
+web
+
+[app:vars]
+ansible_ssh_user=root
+
+[db:vars]
+ansible_ssh_user=admin

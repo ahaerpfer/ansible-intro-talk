@@ -1,0 +1,17 @@
+### LaTeX ignores
+*.aux
+*.nav
+*.out
+*.log
+*.snm
+*.toc
+*.vrb
+
+### Bibtx ignores
+*.bbl
+*.blg
+
+###
+presentation.pdf
+handout.pdf
+
